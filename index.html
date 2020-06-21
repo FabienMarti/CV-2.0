@@ -15,18 +15,19 @@
 
 </head>
 <body>
+    <!-- Menu Bootstrap Gauche-->
     <div class="wrapper">
-        <!-- Sidebar  -->
+        <!-- Menu Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
-                <strong>BS</strong>
+                <h3>Menu</h3>
+                <strong>M</strong>
             </div>
             <ul class="list-unstyled components">
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
-                        Home
+                        Accueil
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
@@ -43,7 +44,7 @@
                 <li>
                     <a href="#">
                         <i class="fas fa-briefcase"></i>
-                        About
+                        À propos
                     </a>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-copy"></i>
@@ -82,10 +83,7 @@
             </ul>
             <ul class="list-unstyled CTAs">
                 <li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
-                </li>
-                <li>
-                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                    <a href="" class="download">Télécharger CV A4<i class="fas fa-download float-right"></i></a>
                 </li>
             </ul>
         </nav>
@@ -93,10 +91,9 @@
         <div id="content">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Toggle Sidebar</span>
+                    <!-- Flèche Gauche/Droite-->
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" onclick="changeArrow(sideMenuArrow)">
+                        <i id="sideMenuArrow" class="fas fa-arrow-left"></i>
                     </button>
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
@@ -147,6 +144,14 @@
                 $('#sidebar').toggleClass('active');
             });
         });
+        //Change la flèche de sens au besoin
+        function changeArrow(i){
+            if(i.classList.contains('fa-arrow-left')){
+                i.setAttribute('class', 'fa-arrow-right');
+            }else{
+                i.setAttribute('class', 'fa-arrow-left');
+            }
+        }
     </script>
 </body>
 </html>
